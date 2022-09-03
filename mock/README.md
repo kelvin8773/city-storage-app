@@ -20,12 +20,12 @@ The data sent by the server will consist of a list of order objects. Order objec
 
 ```json
 {
-    "customer": "Carla Garner",
-    "destination": "61109 Alan Motorway, North Corey, CA 92789",
-    "event_name": "CREATED",
-    "id": "d0791ce1",
-    "item": "Caesar salad",
-    "price": 4692,
-    "sent_at_second": 6
+  "customer": "Carla Garner",
+  "destination": "61109 Alan Motorway, North Corey, CA 92789",
+  "event_name": "CREATED",
+  "id": "d0791ce1",
+  "item": "Caesar salad",
+  "price": 4692,
+  "sent_at_second": 6
 }
 ```

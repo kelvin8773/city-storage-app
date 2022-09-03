@@ -2,7 +2,7 @@ const fs = require('fs');
 const app = require('express')();
 const http = require('http').createServer(app);
 
-const localhostRegex = /http:\/\/localhost/
+const localhostRegex = /http:\/\/localhost/;
 const io = require('socket.io')(http, {
   cors: { origin: localhostRegex }
 });
@@ -13,7 +13,7 @@ const DATA_FILE = __dirname + '/order-data.json';
 // Initialize order data.
 const orders = JSON.parse(fs.readFileSync(DATA_FILE));
 const byTime = {};
-orders.forEach(order => {
+orders.forEach((order) => {
   const timestamp = String(order.sent_at_second);
   if (byTime[timestamp]) {
     byTime[timestamp].push(order);

@@ -20,6 +20,9 @@
     "start": "concurrently -k -n web,mockServer  \"yarn start:web\" \"yarn start:mock\" ",
     "start:web": "react-scripts start",
     "start:mock": "cd mock && yarn && yarn start",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md}' --config ./.prettierrc",
+    "lint": " eslint src/**/*.js{,x}",
+    "lint:fix": "eslint src/**/*.js{,x} --fix",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -46,5 +49,15 @@
   "main": "index.js",
   "repository": "git@github.com:kelvin8773/city-storage-app.git",
   "author": "Kelvin Liang <kelvin9877@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^27.0.1",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1"
+  }
 }
