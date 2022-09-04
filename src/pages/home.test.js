@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { store } from '../app/store';
 import StyleProvider from '../styles';
 
-import Home from './index';
+import Home from './Home';
 
 test('renders home page', () => {
   const { getByText, getByTestId } = render(

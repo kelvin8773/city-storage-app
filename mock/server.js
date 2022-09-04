@@ -40,7 +40,7 @@ app.get('/health', (req, res) => {
  * it's meant to be quite bare-bones :)
  */
 io.on('connection', (socket) => {
-  console.log('New connection');
+  console.log('New connection @', new Date().toLocaleTimeString('en-US'));
   let elapsed = 0;
   const ticker = setInterval(() => {
     if (elapsed >= 330) {
@@ -56,7 +56,7 @@ io.on('connection', (socket) => {
   }, 1000);
 
   socket.on('disconnect', () => {
-    console.log('Client disconnected');
+    console.log('Client disconnected @', new Date().toLocaleTimeString('en-US'));
     clearInterval(ticker);
   });
 });

@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 
-import Home from './pages';
+import Home from './pages/Home';
 
 import { store } from './app/store';
 import StyleProvider from './styles';
