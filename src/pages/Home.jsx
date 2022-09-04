@@ -50,10 +50,10 @@ const Home = () => {
     <AppContainer>
       <h1>City Storage Order Tracking System</h1>
       <Container>
-        <SearchBar value={inputValue} />
+        <SearchBar value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
       </Container>
 
-      <OrderTable orders={orders} />
+      <OrderTable orders={orders} filter={inputValue} />
     </AppContainer>
   );
 };
