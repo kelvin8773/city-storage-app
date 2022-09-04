@@ -3,17 +3,18 @@ module.exports = {
   plugins: ['react', 'react-hooks', 'eslint-plugin-import', 'jest'],
   env: {
     browser: true,
-    es2021: true,
+    es6: true,
     jest: true
   },
   parserOptions: {
     ecmaFeatures: {
       jsx: true
     },
-    ecmaVersion: 2020,
+    ecmaVersion: 2018,
     sourceType: 'module'
   },
   rules: {
-    'linebreak-style': 'warn'
+    'linebreak-style': 'warn',
+    'react/no-unknown-property': [0]
   }
 };

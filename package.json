@@ -2,19 +2,34 @@
   "name": "city-storage-app",
   "version": "0.1.1",
   "private": true,
+  "description": "Frontend challenge for private company",
+  "main": "index.js",
+  "repository": "git@github.com:kelvin8773/city-storage-app.git",
+  "author": "Kelvin Liang <kelvin9877@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^27.0.1",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
     "@testing-library/user-event": "^14.1.1",
-    "concurrently": "^7.3.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.1",
     "react-scripts": "5.0.1",
-    "react-use-websocket": "^4.2.0",
-    "styled-components": "^5.3.5",
-    "web-vitals": "^2.1.0"
+    "socket.io-client": "^4.5.2",
+    "styled-components": "^5.3.5"
   },
   "scripts": {
     "start": "concurrently -k -n web,mockServer  \"yarn start:web\" \"yarn start:mock\" ",
@@ -44,20 +59,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "Frontend challenge for private company",
-  "main": "index.js",
-  "repository": "git@github.com:kelvin8773/city-storage-app.git",
-  "author": "Kelvin Liang <kelvin9877@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^27.0.1",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.7.1"
   }
 }
