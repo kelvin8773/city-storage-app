@@ -8,41 +8,16 @@ import OrderTable from '../features/orderTable';
 import { AppContainer, Container } from '../styles';
 
 const Home = () => {
-  const [orders, setOrders] = useState([]);
-  const [inputValue, setInputValue] = useState();
-  // const dispatch = useDispatch();
-  // const orders = useSelector((state) => {
-  //   return state.orders.value;
-  // });
+  const [inputValue, setInputValue] = useState('');
+  const dispatch = useDispatch();
+  const orders = useSelector((state) => {
+    return state.orders.value;
+  });
 
   useEffect(() => {
     const socket = io('ws://localhost:4000');
     socket.on('order_event', (data) => {
-      // console.log(data);
-      // dispatch(updateOrders(data));
-
-      setOrders((preOrders) => {
-        const toRemoveIndexes = [];
-        if (preOrders.length === 0) return data;
-
-        const updateOrders = preOrders.sort().map((preOrder) => {
-          let nextOrder = { ...preOrder };
-          data.map((newOrder, newOrderIndex) => {
-            if (preOrder.id === newOrder.id) {
-              nextOrder = { ...newOrder };
-              toRemoveIndexes.push(newOrderIndex);
-            }
-          });
-
-          return nextOrder;
-        });
-
-        toRemoveIndexes.map((idx) => (data[idx] = 'removed'));
-        const newOrders = data.filter((order) => order !== 'removed');
-        const allOrders = [...updateOrders, ...newOrders];
-
-        return allOrders;
-      });
+      dispatch(updateOrders(data));
     });
   }, []);
 

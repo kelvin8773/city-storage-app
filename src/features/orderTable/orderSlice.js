@@ -11,10 +11,10 @@ export const ordersSlice = createSlice({
     updateOrders: (state, action) => {
       const newData = action.payload.sort();
 
-      const toRemoveIndexes = [];
       if (state.value.length === 0) {
         state.value = newData;
       } else {
+        let toRemoveIndexes = [];
         const updatedOrders = state.value.sort().map((preOrder) => {
           let nextOrder = { ...preOrder };
           newData.map((newOrder, newOrderIndex) => {
@@ -26,8 +26,8 @@ export const ordersSlice = createSlice({
           return nextOrder;
         });
 
-        toRemoveIndexes.map((idx) => (newData[idx] = 'removed'));
-        const newOrders = newData.filter((order) => order !== 'removed');
+        const newOrders = newData.filter((_, index) => !toRemoveIndexes.includes(index));
+        toRemoveIndexes = [];
         state.value = [...updatedOrders, ...newOrders];
       }
     }
