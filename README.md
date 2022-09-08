@@ -12,7 +12,10 @@
 
 > Start Develop / Demo
 
+- visiting demo site at http://localhost:3000
+
 ```bash
+# demo
 $ yarn start
 
 # start web server only
