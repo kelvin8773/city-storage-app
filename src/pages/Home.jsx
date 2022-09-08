@@ -21,6 +21,8 @@ const Home = () => {
     });
   }, []);
 
+  const filterOrders = orders.filter((order) => order.price >= inputValue);
+
   return (
     <AppContainer>
       <h1>City Storage Order Tracking System</h1>
@@ -28,7 +30,7 @@ const Home = () => {
         <SearchBar value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
       </Container>
 
-      <OrderTable orders={orders} filter={inputValue} />
+      <OrderTable orders={filterOrders} filter={inputValue} />
     </AppContainer>
   );
 };
